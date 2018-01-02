@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>TOTP</title>
+    <link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
+    <link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.min.css">
+    <!-- load theme file for your application -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Main page -->
+    <div id="page-main" class="ui-page ui-page-active">
+        <header class="ui-header">
+            <h3 class="ui-title">2FA Codes</h3>
+        </header>
+
+        <div class="ui-content">
+            <ul id="data-list" class="ui-listview"></ul>
+        </div>
+
+        <footer class="ui-footer ui-bottom-button">
+            <button id="btn-add-data" class="ui-btn">Add service</button>
+        </footer>
+    </div>
+
+
+    <!-- Page for adding new piece of data -->
+    <div id="page-add-data" class="ui-page" data-enable-page-scroll="false">
+        <header class="ui-header disappear-when-typing">
+            <h3 class="ui-title">Add service</h3>
+        </header>
+
+        <div class="ui-content">
+            <p class="data name">
+                <label for="in-data-name" class="disappear-when-typing">Name:</label>
+                <input id="in-data-name" type="text" value="">
+            </p>
+            <p class="data raw-data disappear-when-typing">
+                <label for="in-data-raw-data">Key:</label>
+                <input id="in-data-raw-data" type="text" value="">
+            </p>
+        </div>
+
+        <footer class="ui-footer ui-bottom-button disappear-when-typing">
+            <button id="btn-save-data" class="ui-btn">Save</button>
+        </footer>
+    </div>
+
+
+    <!-- Page for displaying and removing the piece of data -->
+    <div id="page-display-data" class="ui-page" data-enable-page-scroll="true">
+        <header class="ui-header">
+            <h3 class="ui-title data name"></h3>
+        </header>
+
+        <div class="ui-content">
+            <p class="data raw-data" id="otp"></p>
+            <div id="time-left-bar"></div>
+        </div>
+
+        <footer class="ui-footer">
+            <button id="btn-remove-data" class="ui-btn">Delete</button>
+        </footer>
+    </div>
+
+    <!-- Circular input page -->
+    <div id="circle-input-page" class="ui-page">
+        <ul id="input-circle"></ul>
+        <span id="center-of-input-circle">
+            <div id="recent-chars"></div>
+            <div id="currently-selected-letter"></div>
+        </span>
+    </div>
+
+    <!-- Delete confirmarion popup -->
+    <div id="delete-confirmation-popup" class="ui-popup">
+        <div class="ui-popup-content">
+            <p>Are you sure you want to delete forever?</p>
+        </div>
+        <div class="ui-popup-content ui-left">
+            <button id="btn-cancel-delete" class="ui-btn">Cancel</button>
+        </div>
+        <div class="ui-popup-content ui-right">
+            <button id="btn-confirm-delete" class="ui-btn">OK</button>
+        </div>
+    </div>
+
+
+    <!-- General error popup -->
+    <div id="error-popup" class="ui-popup">
+        <div class="ui-popup-content"></div>
+        <footer class="ui-popup-footer ui-bottom-button">
+            <button id="btn-ok" class="ui-btn">OK</button>
+        </footer>
+    </div>
+
+
+    <script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
+    <script type="text/javascript" src="js/circle-helper.js"></script>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/circle-of-chars.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/sha.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

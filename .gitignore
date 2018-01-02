@@ -1,0 +1,4 @@
+*.wgt
+.sign/*
+*.KeyManager
+.DS_STORE

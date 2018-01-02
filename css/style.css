@@ -1,0 +1,114 @@
+* {
+  font-family: "Verdana", "Lucida Sans", "Arial", "Helvetica", sans-serif;
+}
+
+body {
+  background-color: #222;
+  margin: 0 auto;
+}
+
+#package-id {
+  margin: 0;
+  padding: 5px 0;
+}
+
+#btn-remove-data {
+  font-size: 0.6em;
+  width: 100%;
+}
+
+.data {
+  font-size: 0.6em;
+}
+
+.data input {
+  background-color: #444;
+  border: 0;
+  margin-top: 5px;
+  padding: 7px;
+  color: #fff;
+  width: 80%;
+}
+
+.data span {
+  font-style: italic;
+  color: #fff;
+}
+
+.ui-listview li input[type="radio"] {
+  position: absolute;
+  right: 30px;
+  top: 0px;
+  margin-top: 18px;
+}
+
+.ui-listview li.li-has-radio label {
+  display: block;
+  padding: 31.5px 94px 31.5px 40px;
+  margin: -30px -8px -21px -38px;
+}
+
+#input-circle {
+  /* background-color: blue; */
+  height: 50%;
+  width: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 22.5%;
+}
+
+.list-item {
+  list-style: none;
+  /* background-color: red; */
+  /* height: 5%;
+	width: 5%; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#center-of-input-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 35%;
+}
+
+#center-of-input-circle > div {
+  width: 100%;
+  text-align: center; 
+}
+
+#otp {
+  margin-top: 0;
+  font-size: 1.75em;
+}
+
+@media screen and (max-height: 80px) {
+  .disappear-when-typing {
+    display: none;
+  }
+
+  .data.name > input {
+    width: 40%;
+  }
+}
+
+@media screen and (min-height: 80px) {
+  .disappear-when-typing {
+    display: initial;
+  }
+
+  .data.name > input {
+    width: initial;
+  }
+}
+
+#time-left-bar {
+  position: absolute;
+  height: 10px;
+  background-color: blue;
+}
